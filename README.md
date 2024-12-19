@@ -20,7 +20,7 @@
     npm install
     ```
     ```bash
-    npm install @yamada-ui/react @yamada-ui/lucide
+
     ```
 1. ローカルで起動。
     ```bash
@@ -61,28 +61,14 @@
           </body>
         </html>
         ```
-    - vite.config.jsのdefineConfig内を以下に変更。（`server: { host: true }`を追記。Yamada UIをインポート。）
+    - vite.config.jsのdefineConfig内を以下に変更。（`server: { host: true }`を追記。）
         ```ts
-        import { defineConfig, Plugin } from "vite"
-        import { getColorModeScript } from "@yamada-ui/react"
+        import { defineConfig } from "vite"
         import react from '@vitejs/plugin-react-swc'
-
-        function injectScript(): Plugin {
-          return {
-            name: "vite-plugin-inject-scripts",
-            transformIndexHtml(html) {
-              const content = getColorModeScript({
-                initialColorMode: "system",
-              })
-
-              return html.replace("<body>", `<body><script>${content}</script>`)
-            },
-          }
-        }
 
         // https://vite.dev/config/
         export default defineConfig({
-          plugins: [react(), injectScript()],
+          plugins: [react()],
           server: { host: true }
         })
         ```
@@ -90,16 +76,11 @@
         ```tsx
         import { StrictMode } from 'react'
         import { createRoot } from 'react-dom/client'
-        import { UIProvider, extendConfig } from '@yamada-ui/react'
         import App from './App.tsx'
-
-        const customConfig = extendConfig({ initialColorMode: "system" })
 
         createRoot(document.getElementById('root')!).render(
           <StrictMode>
-            <UIProvider config={customConfig}>
               <App />
-            </UIProvider>
           </StrictMode>
         )
         ```
