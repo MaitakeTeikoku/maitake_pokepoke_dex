@@ -20,7 +20,7 @@
     npm install
     ```
     ```bash
-
+    npm install @mui/material @emotion/react @emotion/styled @mui/icons-material @fontsource/roboto
     ```
 1. ローカルで起動。
     ```bash
@@ -72,7 +72,7 @@
           server: { host: true }
         })
         ```
-    - main.tsxを以下に変更し、Yamada UIをインポート。
+    - main.tsxを以下に変更。
         ```tsx
         import { StrictMode } from 'react'
         import { createRoot } from 'react-dom/client'
