@@ -41,7 +41,7 @@ function Main() {
                 <CardActionArea onClick={() => { }}>
                   <CardMedia
                     component="img"
-                    image={`https://lh3.google.com/u/0/d/${item[3]}=w300`}
+                    image={`https://lh3.googleusercontent.com/d/${item[3]}=w300`}
                     alt={item[1]}
                     onContextMenu={(event: React.MouseEvent) => { event.preventDefault() }}
                     draggable={false}
