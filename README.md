@@ -26,11 +26,13 @@
     ```bash
     npm run dev
     ```
-1. 以下を削除し、クリーンアップ。
-    - src/assets
-    - src/index.css
-    - src/App.css
-    - public/vite.svg
+1. クリーンアップ。
+    - 以下を削除。
+        - src/assets
+        - src/index.css
+        - src/App.css
+        - public/vite.svg
+    - publicにfavicon.icoをアップロード。
     - src/App.tsxを以下に変更。
         ```tsx
         function App() {
@@ -43,7 +45,6 @@
 
         export default App
         ```
-    - publicにfavicon.icoをアップロード。
     - index.htmlを以下に変更。（`lang="ja"`、`link  href="/favicon.ico"`、`<title></title>`）
         ```html
         <!doctype html>
