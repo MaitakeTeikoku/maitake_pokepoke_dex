@@ -125,7 +125,7 @@
     })
     ```
 1. ブラウザで、Github ActionsでGithub Pagesにデプロイするように設定。
-1. ブラウザで、GitHub Actionsから.github/workflows/main.ymlを作成し、以下を記述。
+1. .github/workflows/main.ymlを作成し、以下を記述。
     ```yml
     # 静的コンテンツを GitHub Pages にデプロイするためのシンプルなワークフロー
     name: Deploy static content to Pages
@@ -179,10 +179,7 @@
             id: deployment
             uses: actions/deploy-pages@v4
     ```
-1. プル。
-    ```bash
-    git pull origin main
-    ```
+
 ---
 ---
 
